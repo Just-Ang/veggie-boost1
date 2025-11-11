@@ -1,0 +1,11 @@
+/* Зкомпільований CSS (поки базовий). Якщо будеш використовувати SCSS — компілюй у цей файл */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+}
