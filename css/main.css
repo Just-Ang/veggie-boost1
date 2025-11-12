@@ -211,12 +211,35 @@ font-size: 14px;
 line-height: 1.28571;
 letter-spacing: -0.04em;
 color: #fff;
+margin-bottom: 20px;
 }
+
+.hero-btn {
+  width: 68px;
+height: 68px;
+border: none;
+  border-radius: 100%;
+fill: var(--beige);
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 14px;
+
+/* line-height: 16px; */ 
+line-height: 1.14286;
+letter-spacing: -0.04em;
+text-transform: uppercase;
+text-align: center;
+color: var(--orange);
+text-shadow: 0 4px 70px 0 rgba(0, 0, 0, 0.1);
+transform: rotate(-14deg);
+margin-bottom: 8px;
+}
+
 
 .hero-img {
   width: 100%;
   max-width: 303px;
   height: auto;
 height: 236px;
-border: none;
+clip-path: inset(2px);
 }
