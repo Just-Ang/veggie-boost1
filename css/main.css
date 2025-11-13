@@ -63,6 +63,69 @@ p {
 } 
 
 /* //////////////// HEADER////////// */
+
+.menu_button-open {
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.site-nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  /* width: 100%; */
+  background: #333;
+  padding: 10px 0;
+  /* @media screen and (max-width: 768px) {
+    max-width: 100%;
+    
+  } */
+}
+
+.site-nav.active {
+
+   @media (max-width: 768px) {
+     display: flex;
+  background-color: var(--green);
+  width: 100%;
+  height: 100%;
+
+   }
+  
+ 
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+.site-nav {
+  display: flex;
+    /* display: flex !important; */
+    position: static;
+    flex-direction: row;
+    background: none;
+  }}
+
+
+
 .site-nav_list {
      font-family: var(--font-family);
 font-weight: 400;
@@ -89,13 +152,18 @@ letter-spacing: -0.04em;
 text-transform: uppercase;
 text-align: center;
 color: var(--black);
-margin-right: 251px;
+ /* @media screen and (min-width: 768px){ */
+   /* margin-right: 251px; */
+    
+  /* } */
+
 /* margin-top: 16px; */
 }
 
 
 .button-order {
-    all: unset; 
+  all: unset; 
+  display: none;
   background: transparent; 
   cursor: pointer; 
 
@@ -103,19 +171,34 @@ margin-right: 251px;
   margin: 0;
   line-height: 1;
   margin-right: 12px;
+  @media screen and (min-width: 768px){
+    display: block;
+    
+  }
+  
 }
+ .header-container {
+     /* border:#141414 dotted; */
+    display: flex;
+    width: 100%;
+    /* max-width: 375px; */
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: space-between;
+  }
 
 @media screen and (min-width: 768px) {
   .header-container {
-     border:#141414 dotted;
     display: flex;
-    /* justify-content: space-around; */
+    justify-content: space-between;
+     padding-left: 32px;
+    padding-right: 32px;
   }
   .site-nav_list {
     display: flex;
     gap: 14px;
-    margin: 16px 86px 16px 32px;
-   
+    /* margin: 16px 86px 16px 32px;
+    */
   }
 }
 
