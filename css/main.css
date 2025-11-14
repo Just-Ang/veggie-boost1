@@ -191,11 +191,17 @@ p {
   }
   @media screen and (max-width: 768px) {
    transform:  translateX(-44px) translateY(300px);
-
     z-index: 4;
   }
 }.button-order.active {
   display: block;
+}
+.button-order > svg {
+  @media screen and (max-width: 768px) {
+  fill: var(--white);
+  }
+
+  
 }
 .header-container {
   /* border:#141414 dotted; */
@@ -246,6 +252,10 @@ p {
   padding-top: 48px;
   max-width: fit-content;
   /* margin-left: 20px; */
+  @media screen and (min-width: 1280px) {
+   padding: 0;
+  }
+
 }
 .user-list_photo {
   width: 44px;
@@ -409,6 +419,7 @@ line-height: 1.17188;
   @media screen and (min-width: 1280px){
     /* image 1 */
 max-width: 517px;
+margin-bottom: 50px;
 
     
   }
@@ -421,6 +432,11 @@ max-width: 517px;
   gap: 4px;
   justify-content: end;
   margin-bottom: 20px;
+   @media screen and (min-width: 1280px){
+   margin-bottom: 32px;
+
+    
+  }
 }
 
 .hero-list_item {
