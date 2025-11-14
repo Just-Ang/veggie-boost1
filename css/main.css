@@ -239,7 +239,7 @@ p {
   }
 }
 
-/* HERO /////////////////////////// */
+/* /////////////////////////////.  HERO /////////////////////////// */
 .container-hero {
   padding-left: 20px;
   padding-right: 20px;
@@ -300,7 +300,7 @@ p {
     height: 55px;
     font-size: 10px;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     width: 70px;
     height: 70px;
     font-size: 12px;
@@ -466,4 +466,56 @@ p {
 .hero-list_item:focus {
   color: var(--black);
   background-color: var(--white);
+}
+.hero-right {
+      display: flex;
+    flex-direction: column;
+}
+
+
+
+/*    ////////////////////////How it works/////////////////// */
+
+.container-how {
+  /* padding-top: 80px;
+  padding-right: 80px;
+  padding-left: 20px;
+  padding-right: 20px; */
+  padding: 80px 20px;
+}
+.how-title{
+  font-family: var(--font-family);
+font-weight: 500;
+font-size: 28px;
+
+/* line-height: 32px; */ 
+line-height: 1.14286;
+letter-spacing: -0.04em;
+text-transform: uppercase;
+color: var(--black);
+margin-bottom: 20px;
+}
+
+.how-img{
+  width: 100%;
+  max-width: 335px;
+  margin-bottom: 20px;
+}
+
+.how-text-one,
+.how-text-two {
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 14px;
+
+/* line-height: 18px; */ 
+line-height: 1.28571;
+letter-spacing: -0.04em;
+color: var(--black);
+}
+.how-text-one {
+  margin-bottom: 20px;
+}
+.how-text-two {
+  margin-bottom: 80px;
 }
