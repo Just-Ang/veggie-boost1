@@ -526,6 +526,7 @@ p {
   background-size: 40px 40px;
 
   padding: 40px 20px 0;
+  line-height: 0;
 }
 .how-steps__title{
   font-family: var(--font-family);
