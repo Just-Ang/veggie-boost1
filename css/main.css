@@ -592,3 +592,69 @@ font-size: 18px;
   max-width: 258px;
 height:auto;
 }
+
+@media screen and (min-width:768px) {
+  .how-top{
+   display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: space-between;
+
+
+}
+.how-title{
+  flex-basis: 386px;
+
+    order: 1;
+    color: rgba(20, 20, 20, 1);
+
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 40px;
+
+/* line-height: 44px; */ 
+line-height: 1.1;
+letter-spacing: -0.04em;
+text-transform: uppercase;
+color: var(--black);
+/* margin-right: 8px; */
+
+}
+
+.how-img{
+   /* flex-basis:  310px;; */
+       max-width: 310px;
+       /* img vegetables */
+
+height: 176px;
+    order: 2;
+    /* display: flex;
+    justify-content: flex-end; */
+
+}
+
+.how-text-one,
+.how-text-two {
+  flex-basis: 317px;
+      /* flex-basis: 50%; */
+    order: 3;
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 18px;
+
+/* line-height: 24px; */ 
+line-height: 1.33333;
+letter-spacing: -0.04em;
+color: var(--black);
+margin-bottom: 100px;
+}
+.how-text-one{
+  margin-right: 20px;
+/* width: 317px; */
+}
+.how-text-two{
+  /* width: 279px; */
+}
+  
+}
