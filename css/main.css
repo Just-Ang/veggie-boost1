@@ -619,6 +619,7 @@ letter-spacing: -0.04em;
 text-transform: uppercase;
 color: var(--black);
 /* margin-right: 8px; */
+ margin-bottom: 40px;
 
 }
 
@@ -631,6 +632,7 @@ height: 176px;
     order: 2;
     /* display: flex;
     justify-content: flex-end; */
+    margin-bottom: 40px;
 
 }
 
@@ -650,11 +652,41 @@ color: var(--black);
 margin-bottom: 100px;
 }
 .how-text-one{
-  margin-right: 20px;
+  /* margin-right: 20px; */
 /* width: 317px; */
 }
 .how-text-two{
   /* width: 279px; */
 }
   
+.how-steps{
+  display: flex;
+}
+.how-steps__img{
+  /* img girl */
+
+  order: 1;
+   width: auto;
+    max-width: 350px;
+    flex: 0 0 auto;
+  padding-top: 40px;
+}
+.how-steps-rigth{
+  order: 2;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.how-steps__title{
+
+font-size: 28px;
+
+/* line-height: 32px; */ 
+line-height: 1.14286;
+text-shadow: 0 4px 70px 0 rgba(0, 0, 0, 0.1);
+padding-right: 40px;
+}
+.how-steps__list{
+  padding-right: 39px;
+}
 }
