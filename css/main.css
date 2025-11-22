@@ -823,7 +823,34 @@ line-height: 1.2;
   gap: 20px;
 }
 /* ////////////////////////////Product Card//////////////////////// */
+.container-vegatables {
+  padding: 80px 20px;
+}
 
+.vegateles-title{
+  font-weight: 500;
+font-size: 24px;
+
+/* line-height: 28px; */ 
+line-height: 1.16667;
+letter-spacing: -0.04em;
+text-transform: uppercase;
+text-align: center;
+color: var(--black);
+margin-bottom: 14px;
+}
+.vegateles-text {
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 14px;
+
+/* line-height: 18px; */ 
+line-height: 1.28571;
+letter-spacing: -0.04em;
+text-align: center;
+color: var(--black);
+margin-bottom: 40px;
+}
 .product-card {
   position: relative;
   background-color: var(--light-green);
