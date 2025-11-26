@@ -32,6 +32,18 @@ p {
   margin: 0;
   padding: 0;
 }
+.visually-hidden {
+  position: absolute ;
+  width: 1px ;
+  height: 1px ;
+  padding: 0 ;
+  margin: -1px ;
+  overflow: hidden ;
+  clip: rect(0 0 0 0) ; /* старые браузеры */
+  clip-path: inset(50%) ; /* современные браузеры */
+  white-space: nowrap ;    /* запрет переноса */
+  border: 0;
+}
 
 .link {
   text-decoration: none;
@@ -524,7 +536,6 @@ p {
   background: var(--beige);
   background-image: radial-gradient(var(--dotted) 2.5px, transparent 1px);
   background-size: 40px 40px;
-
   padding: 40px 20px 0;
   line-height: 0;
 }
@@ -844,7 +855,7 @@ line-height: 1.2;
 }
 /* ////////////////////////////Product Card//////////////////////// */
 .container-vegatables {
-  padding: 80px 20px;
+  padding: 80px 20px 0px;
 }
 
 .vegateles-title{
@@ -1047,4 +1058,75 @@ margin-left: 295px;
     margin-left: 550px;
   
   }
+}
+
+
+
+/* /////////DELIVERY/////////// */
+.container-delivery{
+   
+  padding: 80px 20px;
+}
+.delivery-block{
+  border-radius: 40px;
+  background: var(--beige);
+  background-image: radial-gradient(var(--dotted) 2.5px, transparent 1px);
+  background-size: 40px 40px;
+  padding: 80px 20px;
+  line-height: 0;
+  @media screen and (min-width: 768px) {
+    border-radius: 80px;
+   padding:40px 80px ;
+  }
+
+  @media screen and (min-width: 1280px) {
+  
+  }
+  
+}
+
+
+.delivery-img{
+  width: 295px;
+  height: auto;
+  margin-bottom: 40px;
+  @media screen and (min-width: 768px) {
+  width: 544px;
+  }
+
+  @media screen and (min-width: 1280px) {
+  
+  }
+}
+.delivery-title{
+  font-family: var(--font-family);
+font-weight: 500;
+font-size: 24px;
+
+/* line-height: 28px; */ 
+line-height: 1.16667;
+letter-spacing: -0.04em;
+text-transform: uppercase;
+text-align: center;
+color: var(--black);
+@media screen and (min-width: 768px) {
+font-size: 28px;
+line-height: 1.14286;
+  
+  }
+
+  @media screen and (min-width: 1280px) {
+  
+  }
+}
+
+.accent-green{
+  font-style: italic;
+color: var(--green);
+
+}
+.accent-orange{
+
+  font-style: italic;
+color: var(--orange);
 }
