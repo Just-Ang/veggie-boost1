@@ -856,6 +856,15 @@ line-height: 1.2;
 /* ////////////////////////////Product Card//////////////////////// */
 .container-vegatables {
   padding: 80px 20px 0px;
+  @media screen and (min-width: 768px) {
+    padding: 100px 32px 0px;
+ 
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 124px;
+ 
+  }
 }
 
 .vegateles-title{
@@ -874,13 +883,29 @@ margin-bottom: 14px;
   font-family: var(--font-family);
 font-weight: 400;
 font-size: 14px;
-
 /* line-height: 18px; */ 
 line-height: 1.28571;
 letter-spacing: -0.04em;
 text-align: center;
 color: var(--black);
 margin-bottom: 40px;
+@media screen and (min-width: 768px) {
+  margin-left: 71px;
+  font-size: 18px;
+
+/* line-height: 24px; */ 
+line-height: 1.33333;
+
+  width: 562px;
+height: 72px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-left: 327px;
+    width: 562px;
+height: 72px;
+  
+  }
 }
 .product-card {
   background-color: var(--light-green);
@@ -941,9 +966,9 @@ margin-bottom: 40px;
 
 
 .product-card__image {
-  /* width: 100%;
-  height: 100%;  */
-width: 292px;
+width: 100%;
+  /* height: 100%;  */
+max-width: 292px;
 height: 223px;
   object-fit: contain;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
@@ -952,12 +977,12 @@ height: 223px;
   
 @media screen and (min-width: 768px) {
 
-width: 300px;
-height: 245px;
-  
+max-width: 300px;
+/* height: 245px;
+   */
   }
  @media screen and (min-width: 1280px) {
-  width: 321px;
+  max-width: 321px;
 height: 261px;
   }
   
@@ -1066,6 +1091,11 @@ margin-left: 295px;
 .container-delivery{
    
   padding: 80px 20px;
+ 
+
+  @media screen and (min-width: 1280px) {
+   padding: 100px 32px;
+  }
 }
 .delivery-block{
   border-radius: 40px;
@@ -1080,25 +1110,29 @@ margin-left: 295px;
   }
 
   @media screen and (min-width: 1280px) {
-  
+  display: flex;
+  align-items: center;
+  gap: 130px;
+  padding: 44px 64px;
   }
   
 }
 
 
 .delivery-img{
-  width: 295px;
+   width: 100%;
+  max-width: 295px;
   height: auto;
   margin-bottom: 40px;
   @media screen and (min-width: 768px) {
-  width: 544px;
+  max-width: 544px;
   }
 
   @media screen and (min-width: 1280px) {
   
   }
 }
-.delivery-title{
+.delivery-text{
   font-family: var(--font-family);
 font-weight: 500;
 font-size: 24px;
@@ -1112,11 +1146,18 @@ color: var(--black);
 @media screen and (min-width: 768px) {
 font-size: 28px;
 line-height: 1.14286;
+width: 544px;
   
   }
 
   @media screen and (min-width: 1280px) {
-  
+  font-size: 40px;
+  width: 437px;
+  text-align: left;
+  margin-right: 0;
+
+/* line-height: 44px; */ 
+line-height: 1.1;
   }
 }
 
