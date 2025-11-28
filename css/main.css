@@ -1303,18 +1303,17 @@ max-width: 335px;
    margin-bottom: 40px;
   display: flex;
   align-items: center;
- width: 335px;
-height: 48px;
+    width: 100%;
   border: 1px solid #ddd;
   border-radius: 40px;
   overflow: hidden;
   background: var(--white);
   
 border-radius: 100px;
-width: 335px;
+max-width: 335px;
 height: 48px;
 @media screen and (min-width: 768px) {
-  width: 350px;
+  max-width: 350px;
 
   }
 
@@ -1345,6 +1344,9 @@ color: #c1bdbd;
 }
 
 .callback-recall_btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: var(--orange);
   border: none;
   color: var(--white);
@@ -1356,7 +1358,8 @@ line-height: 1.28571;
   cursor: pointer;
   border-radius: 100px;
 padding: 15px 35px;
-width: 105px;
+width: 100%;
+max-width: 105px;
 height: 48px;
 }
 
