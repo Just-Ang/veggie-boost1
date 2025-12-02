@@ -1,25 +1,17 @@
-{/* <script>
-  const toggle = document.getElementById('menu-toggle');
-  const nav = document.getElementById('nav');
 
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-</script> */}
 
 (() => {
-  const mobileMenu = document.querySelector('.site-nav');
+  const mobileMenu = document.querySelector('.js-menu-container');
   const openMenuBtn = document.querySelector('.js-open-menu');
-  const orderBtn = document.querySelector('.button-order');
   const closeMenuBtn = document.querySelector('.js-close-menu');
 
   const toggleMenu = () => {
     const isMenuOpen =
       openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
     openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
-    mobileMenu.classList.toggle('active');
-    orderBtn.classList.toggle('active');
-    closeMenuBtn.classList.toggle('active')
+    closeMenuBtn.getAttribute('aria-expanded') === 'true' || false;
+    closeMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
+    mobileMenu.classList.toggle('is-open');
 
     const scrollLockMethod = !isMenuOpen
       ? 'disableBodyScroll'
