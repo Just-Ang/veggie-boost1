@@ -162,6 +162,16 @@ p {
     display: none;
   }
 }
+.menu_button-open:hover,
+.menu_button-open:focus{
+    transform: scale(1.2); 
+ 
+}
+.menu_button-close:hover,
+.menu_button-close:focus{
+    transform: scale(1.2); 
+ 
+}
 .menu_button-open[aria-expanded="true"] {
   display: none;
 }
