@@ -18,6 +18,9 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
+.no-scroll {
+  overflow: hidden;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -80,6 +83,11 @@ p {
 /* //////////////// HEADER////////// */
 
 @media screen and (max-width: 767px) {
+  .header-container{
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 50px;
+  }
     .menu-container {
         display: none;
         position: absolute;
