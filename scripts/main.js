@@ -1,7 +1,7 @@
 // const { disableBodyScroll, enableBodyScroll } = require('body-scroll-lock');
 
-const disableBodyScroll = bodyScrollLock.disableBodyScroll;
-const enableBodyScroll = bodyScrollLock.enableBodyScroll;
+// const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+// const enableBodyScroll = bodyScrollLock.enableBodyScroll;
 
 (() => {
   const mobileMenu = document.querySelector(".js-menu-container");
