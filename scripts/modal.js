@@ -14,4 +14,11 @@
       document.body.classList.toggle('modal-open');
       refs.modal.classList.toggle("is-hidden");
     }
+
+    modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+    document.body.classList.remove('modal-open');
+  }
+});
   })();

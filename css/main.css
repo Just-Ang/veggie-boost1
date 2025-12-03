@@ -1517,6 +1517,9 @@ height: 28px; */
   pointer-events: none;
   visibility: hidden;
 }
+body.modal-open {
+  overflow: hidden; 
+}
 .modal {
   position: absolute;
   padding: 20px;
@@ -1524,7 +1527,8 @@ height: 28px; */
   border-radius: 20px;
   max-width: 335px;
   width: 90%;
-  height: 90%;
+  height: 90vh;
+   overflow-y: auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1616,4 +1620,103 @@ color: var(--black);
 .modal-form{
   display: flex;
   flex-direction: column;
+  gap: 14px;
+}
+
+.modal-form input {
+  border: 1px solid rgba(20, 20, 20, 0.3);
+border-radius: 100px;
+width: 295px;
+height: 46px;
+ font-family: var(--font-family);
+font-weight: 400;
+font-size: 14px;
+
+/* line-height: 18px; */ 
+line-height: 1.28571;
+letter-spacing: -0.04em;
+color: rgba(0, 0, 0, 0.5);
+padding-top: 14px;
+padding-bottom: 14px;
+padding-left: 24px;
+}
+.modal-form input::placeholder{
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 14px;
+
+/* line-height: 18px; */ 
+line-height: 1.28571;
+letter-spacing: -0.04em;
+color: rgba(20, 20, 20, 0.5);
+padding-top: 14px;
+padding-bottom: 14px;
+/* padding-left: 24px; */
+}
+
+.modal-form textarea{
+  box-sizing: border-box;
+border: 1px solid rgba(20, 20, 20, 0.3);
+border-radius: 20px;
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 14px;
+
+/* line-height: 18px; */ 
+line-height: 1.28571;
+letter-spacing: -0.04em;
+color: rgba(0, 0, 0, 0.5);
+padding-top: 14px;
+padding-bottom: 14px;
+padding-left: 24px;
+height: 132px;
+}
+
+
+.modal-form_btn{
+  border-radius: 100px;
+padding: 12px 24px;
+width: 92px;
+height: 42px;
+background-color: var(--orange);
+margin-top: 20px;
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 14px;
+
+/* line-height: 18px; */ 
+line-height: 1.28571;
+letter-spacing: -0.04em;
+text-transform: capitalize;
+color: #fff;
+border: none;
+}
+
+.custom-checkbox input {
+  display: none;
+}
+.custom-checkbox .checkmark {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+border: 1.5px solid var(--green);
+  border-radius: 4px; 
+  margin-right: 8px;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Стилі для стану checked */
+.custom-checkbox input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--green);
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
 }
