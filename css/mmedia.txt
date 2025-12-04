@@ -10,3 +10,6 @@
   @media screen and (min-width: 1280px) {
   
   }
+/* cabbage */
+width: 172px;
+height: 142px;
