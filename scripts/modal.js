@@ -20,19 +20,25 @@
       refs.closeMenuBtn.setAttribute("aria-expanded", false);
         refs.openMenuBtn.setAttribute("aria-expanded", false);
 
-         const isMenuOpen =
-      refs.openMenuBtn.getAttribute("aria-expanded") === "true" || false;
-      console.log(isMenuOpen)
-        const scrollLockMethod = isMenuOpen
-      ? 'disableBodyScroll'
-      : 'enableBodyScroll';
-    bodyScrollLock[scrollLockMethod](document.body);
+    //      const isMenuOpen =
+    //   refs.openMenuBtn.getAttribute("aria-expanded") === "true" || false;
+    //   console.log()
+    //     const scrollLockMethod = isMenuOpen
+    //   ? 'disableBodyScroll'
+    //   : 'enableBodyScroll';
+    // bodyScrollLock[scrollLockMethod](document.body);
+     if (document.body.classList.contains('modal-open')) {
+    bodyScrollLock.disableBodyScroll(document.body);
+  } else {
+    bodyScrollLock.enableBodyScroll(document.body);
+  }
     }
 
     refs.modal.addEventListener('click', (e) => {
   if (e.target === refs.modal) {
-    modal.style.display = 'none';
-    document.body.classList.remove('modal-open');
+    // refs.modal.style.display = 'none';
+    // document.body.classList.remove('modal-open');
+    toggleModal()
   }
 });
   })();
