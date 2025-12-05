@@ -259,15 +259,22 @@ p {
 
   background: transparent;
   cursor: pointer;
+  width: 20px;
+  height: 20px;
 
-  padding: 0;
+border: 0.5px solid var(--black);
+border-radius: 50%;
+  padding: 3px;
   margin: 0;
   line-height: 1;
-  margin-right: 12px;
+  /* margin-right: 12px; */
+  margin-top: 10px;
 
   @media screen and (max-width: 768px) {
     z-index: 4;
+    border-color: var(--white);
   }
+  
 }
 
 .button-order > svg {
