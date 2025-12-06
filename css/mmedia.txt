@@ -13,3 +13,237 @@
 /* cabbage */
 /* Pop up */
 width: 891px;
+
+
+
+
+
+// ---- допоміжна функція для безпечного scrollIntoView ----
+function smoothScrollTo(selector) {
+  requestAnimationFrame(() => {
+    const el = document.querySelector(selector);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  });
+}
+
+// ------------------------------------------------------------
+(() => {
+  const mobileMenu = document.querySelector(".js-menu-container");
+  const openMenuBtn = document.querySelector(".js-open-menu");
+  const closeMenuBtn = document.querySelector(".js-close-menu");
+  const links = document.querySelectorAll('.js-site-nav_link');
+
+  const toggleMenu = () => {
+    const isMenuOpen = openMenuBtn.getAttribute("aria-expanded") === "true";
+
+    openMenuBtn.setAttribute("aria-expanded", !isMenuOpen);
+    closeMenuBtn.setAttribute("aria-expanded", !isMenuOpen);
+
+    mobileMenu.classList.toggle("is-open");
+
+    // Легше для TBT через requestIdleCallback
+    requestIdleCallback(() => {
+      const method = !isMenuOpen ? 'disableBodyScroll' : 'enableBodyScroll';
+      bodyScrollLock[method](document.body);
+    });
+  };
+
+  openMenuBtn.addEventListener("click", toggleMenu);
+  closeMenuBtn.addEventListener("click", toggleMenu);
+
+  // Закриття меню при ресайзі
+  window.matchMedia("(min-width: 768px)").addEventListener("change", (e) => {
+    if (!e.matches) return;
+
+    mobileMenu.classList.remove("is-open");
+    openMenuBtn.setAttribute("aria-expanded", false);
+
+    requestIdleCallback(() => {
+      bodyScrollLock.enableBodyScroll(document.body);
+    });
+  });
+
+  // Клік по пунктах меню
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove("is-open");
+
+      requestIdleCallback(() => {
+        bodyScrollLock.enableBodyScroll(document.body);
+      });
+
+      const href = link.getAttribute('href');
+
+      if (href.startsWith('#')) {
+        smoothScrollTo(href);
+      } else {
+        window.location.href = href;
+      }
+    });
+  });
+
+})();
+
+// --------------------------------------------------------------------
+
+(() => {
+  const refs = {
+    openModalBtn: document.querySelectorAll("[data-modal-open]"),
+    closeModalBtn: document.querySelector("[data-modal-close]"),
+    modal: document.querySelector("[data-modal]"),
+    mobileMenu: document.querySelector(".js-menu-container"),
+    openMenuBtn: document.querySelector(".js-open-menu"),
+    closeMenuBtn: document.querySelector(".js-close-menu"),
+  };
+
+  function toggleModal() {
+    const show = !refs.modal.classList.contains("is-hidden");
+
+    document.body.classList.toggle('modal-open');
+    refs.modal.classList.toggle("is-hidden");
+
+    refs.mobileMenu.classList.remove("is-open");
+    refs.openMenuBtn.setAttribute("aria-expanded", false);
+    refs.closeMenuBtn.setAttribute("aria-expanded", false);
+
+    requestIdleCallback(() => {
+      if (show) {
+        bodyScrollLock.enableBodyScroll(document.body);
+      } else {
+        bodyScrollLock.disableBodyScroll(document.body);
+      }
+    });
+  }
+
+  refs.openModalBtn.forEach(btn => {
+    btn.addEventListener("click", toggleModal);
+  });
+
+  refs.closeModalBtn.addEventListener("click", toggleModal);
+
+  // Закриття модалки по кліку на фон
+  refs.modal.addEventListener('click', (e) => {
+    if (e.target === refs.modal) toggleModal();
+  });
+
+})();
+
+
+
+
+
+
+
+
+
+was
+menu:
+
+(() => {
+  const mobileMenu = document.querySelector(".js-menu-container");
+  const openMenuBtn = document.querySelector(".js-open-menu");
+  const closeMenuBtn = document.querySelector(".js-close-menu");
+  const links = document.querySelectorAll('.js-site-nav_link');
+  
+
+
+  const toggleMenu = () => {
+    const isMenuOpen =
+      openMenuBtn.getAttribute("aria-expanded") === "true" || false;
+    openMenuBtn.setAttribute("aria-expanded", !isMenuOpen);
+    closeMenuBtn.getAttribute("aria-expanded") === "true" || false;
+    closeMenuBtn.setAttribute("aria-expanded", !isMenuOpen);
+    mobileMenu.classList.toggle("is-open");
+   const scrollLockMethod = !isMenuOpen
+      ? 'disableBodyScroll'
+      : 'enableBodyScroll';
+    bodyScrollLock[scrollLockMethod](document.body);
+  };
+
+  openMenuBtn.addEventListener("click", toggleMenu);
+  closeMenuBtn.addEventListener("click", toggleMenu);
+
+  // Close the mobile menu on wider screens if the device orientation changes
+  window.matchMedia("(min-width: 768px)").addEventListener("change", (e) => {
+    if (!e.matches) return;
+    mobileMenu.classList.remove("is-open");
+    openMenuBtn.setAttribute("aria-expanded", false);
+    bodyScrollLock.enableBodyScroll(document.body);
+  });
+
+links.forEach(link => {
+  link.addEventListener('click', (e) => {
+    // Закриваємо меню
+    mobileMenu.classList.remove("is-open");
+
+    // Увімкнути скрол
+    bodyScrollLock.enableBodyScroll(document.body);
+
+    // Дати трішки часу, щоб анімація меню закрилась
+    setTimeout(() => {
+      const href = link.getAttribute('href');
+      if (href.startsWith('#')) {
+        document.querySelector(href).scrollIntoView({
+          behavior: "smooth"
+        });
+      } else {
+        window.location.href = href;
+      }
+    }, 100); 
+  });
+});
+
+
+})();
+
+
+
+
+
+
+mmodal:
+
+(() => {
+    const refs = {
+      openModalBtn: document.querySelectorAll("[data-modal-open]"),
+      closeModalBtn: document.querySelector("[data-modal-close]"),
+      modal: document.querySelector("[data-modal]"),
+      mobileMenu: document.querySelector(".js-menu-container"),
+    openMenuBtn: document.querySelector(".js-open-menu"),
+   closeMenuBtn: document.querySelector(".js-close-menu"),
+    };
+  
+   refs.openModalBtn.forEach(btn => {
+    btn.addEventListener("click", toggleModal);
+  });
+    refs.closeModalBtn.addEventListener("click", toggleModal);
+  
+    function toggleModal() {
+      document.body.classList.toggle('modal-open');
+      refs.modal.classList.toggle("is-hidden");
+      refs.mobileMenu.classList.remove("is-open");
+      refs.closeMenuBtn.setAttribute("aria-expanded", false);
+        refs.openMenuBtn.setAttribute("aria-expanded", false);
+
+    //      const isMenuOpen =
+    //   refs.openMenuBtn.getAttribute("aria-expanded") === "true" || false;
+    //   console.log()
+    //     const scrollLockMethod = isMenuOpen
+    //   ? 'disableBodyScroll'
+    //   : 'enableBodyScroll';
+    // bodyScrollLock[scrollLockMethod](document.body);
+     if (document.body.classList.contains('modal-open')) {
+    bodyScrollLock.disableBodyScroll(document.body);
+  } else {
+    bodyScrollLock.enableBodyScroll(document.body);
+  }
+    }
+
+    refs.modal.addEventListener('click', (e) => {
+  if (e.target === refs.modal) {
+    // refs.modal.style.display = 'none';
+    // document.body.classList.remove('modal-open');
+    toggleModal()
+  }
+});
+  })();
